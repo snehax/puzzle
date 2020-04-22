@@ -1,0 +1,159 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Funplus Puzzle</title>
+    <link href="style.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <link href="image-puzzle.css" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="image-puzzle.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
+<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.deep_purple-deep_orange.min.css" />
+<script src="https://storage.googleapis.com/code.getmdl.io/1.3.0/material.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+</head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-68637000-4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-68637000-4');
+</script>
+
+<body>
+    <!-- Always shows a header, even in smaller screens. -->
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+  <header id="mainheader" class="mdl-layout__header">⭐ Funplus puzzle ⭐
+    <div class="mdl-layout__header-row">
+      <!-- Title -->
+      <!-- Add spacer, to align navigation to the right -->
+      <div class="mdl-layout-spacer"></div>
+      <!-- Navigation. We hide it in small screens. -->
+     <!--  <nav class="mdl-navigation mdl-layout--large-screen-only">
+        <a class="mdl-navigation__link" href="">Link</a>
+        <a class="mdl-navigation__link" href="">Link</a>
+        <a class="mdl-navigation__link" href="">Link</a>
+        <a class="mdl-navigation__link" href="">Link</a>
+      </nav> -->
+    </div>
+  </header>
+  <div class="mdl-layout__drawer">
+    <span class="mdl-layout-title">Funplus puzzle</span>
+    <nav class="mdl-navigation">
+      <a class="mdl-navigation__link" href="https://www.termsandconditionsgenerator.com/live.php?token=ax6bD3DfAKRuZgP2AnPCqdceJT5b29gz">Terms and condition</a>
+      <a class="mdl-navigation__link" href="https://www.privacypolicygenerator.info/live.php?token=mqbAKK8QgiAQ7QJ9oxbG8SUhl8UGCaGM">Privacy policy</a>
+     <!--  <a class="mdl-navigation__link" href="">Link</a>
+      <a class="mdl-navigation__link" href="">Link</a> -->
+    </nav>
+  </div>
+  <main class="mdl-layout__content">
+    <div class="page-content">
+  <!--       <marquee width="100%" direction="left">
+This is a sample scrolling text that has scrolls texts to left.
+</marquee> -->
+            <div id="collage">
+        <!-- <h2>Image Puzzle</h2> -->
+    
+        <div id="playPanel" style="padding:5px;display:none;">
+            <!-- <h3 id="imgTitle"></h3>  -->
+            <div style="display:inline-block; margin:auto; width:95%; vertical-align:top;">
+                <ul id="sortable" class="sortable"></ul>
+                <div id="actualImageBox">
+                    <div id="stepBox">
+                        <div>Steps:</div><div class="stepCount">0</div>
+                    </div>
+                    <div id="timeBox">
+                        Time Taken: <span id="timerPanel"></span> secs
+                    </div>
+                    <img id="actualImage" />
+                    <div>Re-arrange to create a full picture.</div>
+                    <p id="levelPanel">
+                        <!-- <input type="radio" name="level" id="easy" checked="checked" value="3" /> <label for="easy">Easy</label>
+                        <input type="radio" name="level" id="medium" value="4" /> <label for="medium">Medium</label>
+                        <input type="radio" name="level" id="hard" value="5" /> <label for="hard">Hard</label> -->
+                    </p>
+                    <div>
+                        <button id="btnRule" type="button" class="btn" onclick="rules();">Rules</button>
+                        <button id="newPhoto" type="button" class="btn">Another Photo</button>
+                        <!-- <button id="btnReplay" type="button" class="btn" onclick="about();">About</button> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="gameOver" style="display:none;">
+            <div id="msgcenter" style="padding: 5px 10px 20px 10px; text-align: center; ">
+                <h4 style="text-align:center">Congratulations!! </h4>
+                You have completed this picture.
+                <br />
+                Steps: <span class="stepCount">0</span> steps.
+                <br />
+                Time Taken: <span class="timeCount">0</span> seconds<br />
+                <div>
+                    <button type="button" onclick="window.location.reload(true);">Play Again</button>
+                </div>
+            </div>
+        </div>
+
+        <div class='extra'>1. The inventor of the Rubik’s Cube didn’t realize he’d built a puzzle until he scrambled it the first time and tried to restore it. – Source<br>
+
+2. The day before the 1996 U.S. presidential election, the NYT Crossword contained the clue “Lead story in tomorrow’s newspaper,” the puzzle was built so that both electoral outcomes were correct answers, requiring 7 other clues to have dual responses. – Source<br>
+
+3. In 2011, people playing Foldit, an online puzzle game about protein folding, resolved the structure of an enzyme that causes an Aids-like disease in monkeys. Researchers had been working on the problem for 13 years. The gamers solved it in three weeks. – Source<br>
+
+4. Will Shortz, the New York Times crossword puzzle editor, is the only person in the world to have a degree in enigmatology, the study of puzzles. – Source<br>
+
+5. There is a cryptic organization called Cicada 3301 that posts challenging puzzles online, possibly to recruit codebreakers and linguists. – Source<br></div>
+
+        <script>
+            $('#sortable').draggable({containment: "parent"});
+            var images = [
+                { src: '1.jpg', title: '1' },
+                { src: '2.jpg', title: '2' },
+                { src: '3.jpg', title: '3' },
+                { src: '4.jpg', title: '4' }
+            ];
+
+            $(function () {
+                var gridSize = $('#levelPanel :radio:checked').val();
+                imagePuzzle.startGame(images, gridSize);
+                $('#newPhoto').click(function () {
+                    var gridSize = $('#levelPanel :radio:checked').val();  // Take the updated gridSize from UI.
+                    imagePuzzle.startGame(images, gridSize);
+                });
+
+                $('#levelPanel :radio').change(function (e) {
+                    var gridSize = $(this).val();
+                    imagePuzzle.startGame(images, gridSize);
+                });
+            });
+            function rules() {
+                alert('Re arrange the image parts in a way that it correctly forms the picture. \nThe no. of steps taken will be counted.');
+            }
+           
+        </script>
+    </div>
+        
+
+
+    </div>
+
+  </main>
+       <footer class="demo-footer mdl-mini-footer">
+          <div class="mdl-mini-footer--left-section">
+            <ul class="mdl-mini-footer--link-list">
+              <li><a href="https://www.termsandconditionsgenerator.com/live.php?token=ax6bD3DfAKRuZgP2AnPCqdceJT5b29gz">Terms and condition</a></li>
+              <li><a href="https://www.privacypolicygenerator.info/live.php?token=mqbAKK8QgiAQ7QJ9oxbG8SUhl8UGCaGM">Privacy policy</a></li>
+              <!-- <li><a href="#">User Agreement</a></li> -->
+            </ul>
+          </div>
+        </footer>
+</div>
+
+</body>
+</html>
