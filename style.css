@@ -27,4 +27,8 @@ h3{
 }
 .staticimage{
     text-align: center;
+    width: 100%;
+}
+.staticimage>img{
+    max-width: 100%;
 }
